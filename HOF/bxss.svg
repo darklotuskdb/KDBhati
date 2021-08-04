@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" onload="alert(document.location.href='https://evil.com')"/>
+<svg xmlns="http://www.w3.org/2000/svg" onload="alert(document.location.href='http://localhost')"/>
