@@ -1,1 +1,2 @@
-<script>alert(1)</script>
+alert("XSS attack successful!");
+
